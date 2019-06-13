@@ -1,6 +1,7 @@
 # CnC-TA-Opt
-Script for C&amp;C: TA Base Optimiser (non-flash)
-Cloned from CNCOpt (CNCOpt.com uses flash)
+Script for "CnC TA Base Optimiser" Link button (non-flash).
+
+Cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com.
 
 <b>English</b>
 
