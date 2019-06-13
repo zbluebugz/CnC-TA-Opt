@@ -4,8 +4,9 @@
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
 // @description   Creates a "CnCTAOpt" button when selecting a base in Command & Conquer: Tiberium Alliances. The share button takes you to http://cnctaopt.com/ and fills in the selected base information so you can analyze or share the base.
-// @include     http*://*alliances*.com/*
-// @include     https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
+// @author        zbluebugz
+// @include       http*://*alliances*.com/*
+// @include       https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include       http*://*.cnctaopt.com/*
 // @include       http*://cnctaopt.com/*
 // @grant         GM_log
@@ -18,9 +19,10 @@
 // @contributor   PythEch (http://userscripts.org/users/220246)
 // @contributor   jerbri (http://userscripts.org/users/507954)
 // @contributor   leo7044 (https://github.com/leo7044)
+// @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
-2019-07-01: zbluebugz cloned code for cnctaopt.com - non-flash version.
+2019-07-01: zbluebugz cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com (non-flash).
 2018-06-05: leo7044 fixed it for new server-links
 2016-08-21: leo7044 fixed it for bases level 50+
 2016-05-17: leo7044 fixed it for Infected
