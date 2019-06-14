@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.1
+// @version       1.0.2
 // @name          CnC:TA CnCTAOpt Link Button (non-flash)
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
@@ -7,8 +7,6 @@
 // @author        zbluebugz
 // @include       http*://*alliances*.com/*
 // @include       https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @include       http*://*.cnctaopt.com/*
-// @include       http*://cnctaopt.com/*
 // @grant         GM_log
 // @grant         GM_setValue
 // @grant         GM_getValue
