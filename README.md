@@ -3,7 +3,7 @@ Script for "CnCTAOpt" Link button when playing Command & Conquer: Tiberium Allia
 
 Link button sends the selected base's setup to <a href="http://www.cnctaopt.com">CnC TA : Base builder</a>. (No Flash is required).
 
-CnCTAOpt link button was cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com.
+CnCTAOpt link button was cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaopt.com.
 
 <b>English</b>
 
