@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.2
+// @version       1.0.3
 // @name          CnC:TA CnCTAOpt Link Button (non-flash)
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
@@ -20,7 +20,8 @@
 // @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
-2019-07-01: zbluebugz cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com (non-flash).
+2019-06-24: zbluebugz changed parameter separator symbol from pipe to tilde
+2019-06-14: zbluebugz cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com (non-flash).
 2018-06-05: leo7044 fixed it for new server-links
 2016-08-21: leo7044 fixed it for bases level 50+
 2016-05-17: leo7044 fixed it for Infected
@@ -474,15 +475,15 @@ try {
 							//console.log("Target City: ", city);
 							//console.log("Own City: ", own_city);
 							var link = "http://cnctaopt.com/?map=";
-							link += "3|"; /* link version */
+							link += "3~"; /* link version */
 							switch (city.get_CityFaction()) {
 								case 1:
 									/* GDI */
-									link += "G|";
+									link += "G~";
 									break;
 								case 2:
 									/* NOD */
-									link += "N|";
+									link += "N~";
 									break;
 								case 3:
 									/* FOR faction - unseen, but in GAMEDATA */
@@ -492,21 +493,21 @@ try {
 									/* Forgotten Camps */
 								case 6:
 									/* Forgotten Outposts */
-									link += "F|";
+									link += "F~";
 									break;
 								default:
 									console.log("cnctaopt: Unknown faction: " + city.get_CityFaction());
-									link += "E|";
+									link += "E~";
 									break;
 							}
 							switch (city.get_CityFaction()) {
 								case 1:
 									/* GDI */
-									link += "G|";
+									link += "G~";
 									break;
 								case 2:
 									/* NOD */
-									link += "N|";
+									link += "N~";
 									break;
 								case 3:
 									/* FOR faction - unseen, but in GAMEDATA */
@@ -517,18 +518,18 @@ try {
 								case 6:
 									/* Forgotten Outposts */
 									if (own_city.get_CityFaction() == 1) {
-										link += "G|";
+										link += "G~";
 									}
 									else if (own_city.get_CityFaction() == 2) {
-										link += "N|";
+										link += "N~";
 									}
 									break;
 								default:
 									console.log("cnctaopt: Unknown faction: " + own_city.get_CityFaction());
-									link += "E|";
+									link += "E~";
 									break;
 							}
-							link += city.get_Name() + "|";
+							link += city.get_Name() + "~";
 							defense_units = [];
 							for (var i = 0; i < 20; ++i) {
 								var col = [];
@@ -664,16 +665,16 @@ try {
 							}
 							/* Tack on our alliance bonuses */
 							if (alliance && scity.get_AllianceId() == tcity.get_AllianceId()) {
-								link += "|" + alliance.get_POITiberiumBonus();
-								link += "|" + alliance.get_POICrystalBonus();
-								link += "|" + alliance.get_POIPowerBonus();
-								link += "|" + alliance.get_POIInfantryBonus();
-								link += "|" + alliance.get_POIVehicleBonus();
-								link += "|" + alliance.get_POIAirBonus();
-								link += "|" + alliance.get_POIDefenseBonus();
+								link += "~" + alliance.get_POITiberiumBonus();
+								link += "~" + alliance.get_POICrystalBonus();
+								link += "~" + alliance.get_POIPowerBonus();
+								link += "~" + alliance.get_POIInfantryBonus();
+								link += "~" + alliance.get_POIVehicleBonus();
+								link += "~" + alliance.get_POIAirBonus();
+								link += "~" + alliance.get_POIDefenseBonus();
 							}
 							if (server.get_TechLevelUpgradeFactorBonusAmount() != 1.20) {
-								link += "|newEconomy";
+								link += "~newEconomy";
 							}
 							window.server = server;
 							console.log("cnctaopt: get_TechLevelUpgradeFactorBonusAmount = ", server.get_TechLevelUpgradeFactorBonusAmount());
