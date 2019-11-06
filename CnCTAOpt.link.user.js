@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.3
+// @version       1.0.4
 // @name          CnC:TA CnCTAOpt Link Button (non-flash)
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
@@ -20,6 +20,7 @@
 // @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
+2019-11-06: zbluebugz added base coords to URL
 2019-06-24: zbluebugz changed parameter separator symbol from pipe to tilde
 2019-06-14: zbluebugz cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com (non-flash).
 2018-06-05: leo7044 fixed it for new server-links
@@ -469,6 +470,8 @@ try {
 							var own_city = ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity();
 							var alliance = ClientLib.Data.MainData.GetInstance().get_Alliance();
 							var server = ClientLib.Data.MainData.GetInstance().get_Server();
+							var coordX = city.get_X();
+							var coordY = city.get_Y();
 							tbase = selected_base;
 							tcity = city;
 							scity = own_city;
@@ -676,9 +679,10 @@ try {
 							if (server.get_TechLevelUpgradeFactorBonusAmount() != 1.20) {
 								link += "~newEconomy";
 							}
+							//console.log("cnctaopt: get_TechLevelUpgradeFactorBonusAmount = ", server.get_TechLevelUpgradeFactorBonusAmount());
 							window.server = server;
-							console.log("cnctaopt: get_TechLevelUpgradeFactorBonusAmount = ", server.get_TechLevelUpgradeFactorBonusAmount());
-
+							// append base's coords to link
+							link += "~X" + coordX + "Y" + coordY ;
 							//console.log(link);
 							window.open(link, "_blank");
 						} catch (e) {
