@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.4
+// @version       1.0.5
 // @name          CnC:TA CnCTAOpt Link Button (non-flash)
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
@@ -20,6 +20,7 @@
 // @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
+2019-11-13: zbluebugz added world id & name to URL
 2019-11-06: zbluebugz added base coords to URL
 2019-06-24: zbluebugz changed parameter separator symbol from pipe to tilde
 2019-06-14: zbluebugz cloned from https://github.com/leo7044/CnC_TA/blob/master/CnC-Opt.user.js and adapted for cnctaop.com (non-flash).
@@ -683,6 +684,9 @@ try {
 							window.server = server;
 							// append base's coords to link
 							link += "~X" + coordX + "Y" + coordY ;
+							// append world id and world name
+                            				link += "~WID=" + ClientLib.Data.MainData.GetInstance().get_Server().get_WorldId();
+                            				link += "~WN=" + ClientLib.Data.MainData.GetInstance().get_Server().get_Name();
 							//console.log(link);
 							window.open(link, "_blank");
 						} catch (e) {
