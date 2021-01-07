@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.5
+// @version       1.0.6
 // @name          CnC:TA CnCTAOpt Link Button (non-flash)
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
@@ -20,6 +20,7 @@
 // @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
+2021-01-07: zbluebugz added fa's missing infected camp units (e.g. infected barracks); fix bug with offense faction not 100% correct when viewing infected camps;
 2019-11-13: zbluebugz added world id & name to URL
 2019-11-06: zbluebugz added base coords to URL
 2019-06-24: zbluebugz changed parameter separator symbol from pipe to tilde
@@ -178,7 +179,6 @@ try {
 				"": ""
 			};
 
-
 			function findTechLayout(city) {
 				for (var k in city) {
 					//console.log(typeof(city[k]), "1.city[", k, "]", city[k])
@@ -309,6 +309,16 @@ try {
 						"FOR_Harvester_Tiberium": "h",
 						"FOR_Defense HQ": "q",
 						"FOR_Harvester_Crystal": "n",
+						/* FA's infected buildings (zbluebugz, 01/2021) */
+						"FOR_EVENT_Construction_Yard": "y",
+						"FOR_GDI_Command Center": "e",
+						"FOR_GDI_Barracks": "a", // "b" = tib booster ...
+						"FOR_GDI_Airport": "d",
+						"FOR_GDI_Factory": "f",
+						"FOR_NOD_Command Center": "e",
+						"FOR_NOD_Barracks": "a",  // "b" = tib booster ...
+						"FOR_NOD_Airport": "d",
+						"FOR_NOD_Factory": "f",
 
 						/* Nod Buildings */
 						"NOD_Refinery": "r",
@@ -497,6 +507,8 @@ try {
 									/* Forgotten Camps */
 								case 6:
 									/* Forgotten Outposts */
+								case 8: 
+									/* Infected camps ; (added zbluebugz 01/2021) */
 									link += "F~";
 									break;
 								default:
@@ -504,7 +516,8 @@ try {
 									link += "E~";
 									break;
 							}
-							switch (city.get_CityFaction()) {
+							/* offense faction; correction by zbluebugz 01/2021; changed switch(city.get..) to switch(own_city.get..) */
+							switch (own_city.get_CityFaction()) {
 								case 1:
 									/* GDI */
 									link += "G~";
