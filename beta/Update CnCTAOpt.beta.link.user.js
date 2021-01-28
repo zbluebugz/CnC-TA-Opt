@@ -24,7 +24,7 @@
 
     2021-01: zbluebugz; rewrote/adapated various parts for cnctaopt.com;
 
-    *** 
+    ***
       BETA version - Not to be used in Production!
     ***
 
@@ -34,6 +34,7 @@
 */
 
 try {
+    unsafeWindow.__cnctaoptv3_version = "1.0.3";
     (function () {
         const cnctaopt_beta = function () {
             // base / defense / offense - map units with cnctaopt's hotkeys.
@@ -379,8 +380,8 @@ try {
             }
 
 
-            function cnctaopt_create() {
-                // console.log("CnCTAOpt Link Button v" + window.__cnctaopt_version + " loaded");
+            function cnctaopt3_create() {
+                console.log("CnCTAOpt Link Button v" + window.__cnctaoptv3_version + " loaded");
                 const cnctaopt = {
                     selected_base: null,
                     make_sharelink: function () {
@@ -714,17 +715,17 @@ try {
             }
 
             /* Nice load check (ripped from AmpliDude's LoU Tweak script) */
-            function cnc_check_if_loaded() {
+            function cnc_check_if_loaded3() {
                 try {
                     if (typeof qx != 'undefined') {
                         let a = qx.core.Init.getApplication(); // application
                         if (a) {
-                            cnctaopt_create();
+                            cnctaopt3_create();
                         } else {
-                            window.setTimeout(cnc_check_if_loaded, 1000);
+                            window.setTimeout(cnc_check_if_loaded3, 1000);
                         }
                     } else {
-                        window.setTimeout(cnc_check_if_loaded, 1000);
+                        window.setTimeout(cnc_check_if_loaded3, 1000);
                     }
                 } catch (e) {
                     if (typeof console != 'undefined') console.log(e);
@@ -733,7 +734,7 @@ try {
                 }
             }
             if (/commandandconquer\.com/i.test(document.domain)) {
-                window.setTimeout(cnc_check_if_loaded, 1000);
+                window.setTimeout(cnc_check_if_loaded3, 1000);
             }
         };
 
