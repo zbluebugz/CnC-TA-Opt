@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.7.1
+// @version       1.0.7.3
 // @name          CnC:TA CnCTAOpt Link
 // @namespace     http://cnctaopt.com/
 // @icon          http://cnctaopt.com/favicon.ico
