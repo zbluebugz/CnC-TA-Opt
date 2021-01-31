@@ -17,7 +17,6 @@
 // @contributor   zbluebugz (https://github.com/zbluebugz)
 // ==/UserScript==
 /*
-
     Original script for cncopt.com contributed by:
         @contributor   PythEch (http://userscripts.org/users/220246)
         @contributor   jerbri (http://userscripts.org/users/507954)
