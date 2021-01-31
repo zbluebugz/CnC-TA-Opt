@@ -31,8 +31,11 @@
     ***
         Infected units - needs testing.
     ***
+    
+    31/01/2021: zbluebugz; disabled this script - the beta website is no longer available.
+    
 */
-
+return ;
 try {
     unsafeWindow.__cnctaoptv3_version = "1.0.3";
     (function () {
