@@ -614,7 +614,8 @@ try {
                             for (let i in this) {
                                 try {
                                     if (this[i] && this[i].basename == "Composite") {
-                                        let link = new qx.ui.form.Button("CnCTAOpt", "http://cnctaopt.com/favicon.ico");
+                                        // let link = new qx.ui.form.Button("CnCTAOpt", "http://cnctaopt.com/favicon.ico");
+                                        let link = new qx.ui.form.Button("CnCTAOpt");
                                         link.addListener("execute", function () {
                                             let bt = qx.core.Init.getApplication();
                                             bt.getBackgroundArea().closeCityInfo();
