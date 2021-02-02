@@ -1,8 +1,8 @@
 // ==UserScript==
-// @version       1.0.7.3
+// @version       1.0.7.4
 // @name          CnC:TA CnCTAOpt Link
-// @namespace     http://cnctaopt.com/
-// @icon          http://cnctaopt.com/favicon.ico
+// @namespace     https://cnctaopt.com/
+// @icon          https://cnctaopt.com/favicon.ico
 // @description   Creates a "CnCTAOpt" button when selecting a base in Command & Conquer: Tiberium Alliances. The share button takes you to http://cnctaopt.com/ and fills in the selected base information so you can analyze or share the base.
 // @author        zbluebugz
 // @include       http*://*alliances*.com/*
@@ -23,7 +23,8 @@
         @contributor   leo7044 (https://github.com/leo7044)
     Cloned and modified for cnctaopt.com
 
-    2021-01: zbluebugz; rewrote/adapated various parts for cnctaopt.com;
+    1.0.7.3 2021-01: zbluebugz; rewrote/adapated various parts for cnctaopt.com;
+    1.0.7.4 2021-02: zbluebugz; cnctaopt.com has SSL.
 
     ***
     TODO:
@@ -585,7 +586,7 @@ try {
                             link += "~WN=" + worldName;
                             // append world's maximum level
                             link += "~ML=" + maxLevel;
-                            link = "http://www.cnctaopt.com/index.html?" + encodeURI(link);
+                            link = "https://www.cnctaopt.com/index.html?" + encodeURI(link);
                             // console.log(link);
                             window.open(link, "_blank");
                         } catch (e) {
