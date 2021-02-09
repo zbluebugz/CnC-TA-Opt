@@ -7,6 +7,8 @@
 // @author        zbluebugz
 // @include       http*://*alliances*.com/*
 // @include       https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
+// @homepage      https://github.com/zbluebugz/CnC-TA-Opt
+// @updateURL     https://raw.githubusercontent.com/zbluebugz/CnC-TA-Opt/master/CnCTAOpt.link.user.js
 // @grant         GM_setValue
 // @grant         GM_getValue
 // @grant         GM_registerMenuCommand
