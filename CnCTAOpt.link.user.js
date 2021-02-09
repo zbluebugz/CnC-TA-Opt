@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version       1.0.7.4
+// @version       1.0.7.5
 // @name          CnC:TA CnCTAOpt Link
 // @namespace     https://cnctaopt.com/
 // @icon          https://cnctaopt.com/favicon.ico
@@ -25,6 +25,7 @@
 
     1.0.7.3 2021-01: zbluebugz; rewrote/adapated various parts for cnctaopt.com;
     1.0.7.4 2021-02: zbluebugz; cnctaopt.com has SSL.
+    1.0.7.5 2021-02: zbluebugz; changed "else GM_log(e);" to "else if (typeof GM_log != 'undefined') GM_log(e);"
 
     ***
     TODO:
@@ -729,7 +730,7 @@ try {
                 } catch (e) {
                     if (typeof console != 'undefined') console.log(e);
                     else if (window.opera) opera.postError(e);
-                    else GM_log(e);
+                    else if (typeof GM_log != 'undefined') GM_log(e);
                 }
             }
             if (/commandandconquer\.com/i.test(document.domain)) {
