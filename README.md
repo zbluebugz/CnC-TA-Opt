@@ -19,5 +19,5 @@ NB: The concept of the <a href="http://www.cnctaopt.com">CnC TA : Base builder</
 
 
 # Script Pack
-@netquik has a script pack "CnCTA-SoO-SCRIPT-PACK", similar to debitosphere's script pack, which inclues cnctaopt's link.
+netquik has a script pack "CnCTA-SoO-SCRIPT-PACK", similar to debitosphere's script pack, which inclues cnctaopt's link.
 The CnCTA-SoO-SCRIPT-PACK is available from netquik's github: https://github.com/netquik/CnCTA-SoO-SCRIPT-PACK
